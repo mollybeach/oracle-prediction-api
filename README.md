@@ -31,13 +31,6 @@ Create a `.env` file and add API keys and database credentials.
 ## License
 MIT
 
-// path: src/index.ts
-import express from 'express';
-import dotenv from 'dotenv';
-import cors from 'cors';
-
-dotenv.config();
-
 ## Configuration
 Create a `.env` file and add API keys and database credentials.
 

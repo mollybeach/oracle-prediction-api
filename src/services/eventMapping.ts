@@ -1,10 +1,10 @@
 // path: src/services/eventMapping.ts
 import axios from 'axios';
-import { API_KEY, ESPN_API_URL } from '../config/env';
+import { API_KEY, ESPN_EVENT_API_URL } from '../config/env';
 
 export const fetchEvents = async () => {
     try {
-        const url = ESPN_API_URL;
+        const url = ESPN_EVENT_API_URL;
         console.log('Fetching events from:', url);
         const response = await axios.get(url, {
             headers: {

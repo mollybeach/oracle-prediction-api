@@ -1,10 +1,10 @@
 // path: src/services/espnApi.ts
 import axios from 'axios';
-import { API_KEY, ESPN_API_URL } from '../config/env';
+import { API_KEY, ESPN_TEAM_API_URL, ESPN_EVENT_API_URL } from '../config/env';
 
 export const fetchTeams = async () => {
     try {
-        const url = `${ESPN_API_URL}`;
+        const url = `${ESPN_TEAM_API_URL}`;
         console.log('Fetching teams from:', url);
         const response = await axios.get(url, {
             headers: {
@@ -21,6 +21,6 @@ export const fetchTeams = async () => {
 };
 
 export const fetchMatches = async () => {
-    const response = await axios.get(ESPN_API_URL);
+    const response = await axios.get(ESPN_EVENT_API_URL);
     return response.data;
 };
