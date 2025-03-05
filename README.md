@@ -41,6 +41,17 @@ dotenv.config();
 ## Configuration
 Create a `.env` file and add API keys and database credentials.
 
+
+## Fetching and Mapping Events
+
+To fetch NFL events and map their IDs, you can run the following script:
+
+```sh
+ts-node scripts/fetchEvents.ts
+```
+
+This script will retrieve the events from the ESPN API and log the mapping of event names to their corresponding IDs.
+
 ## TODOs for Oracle Integration
 1. **Research UMA Protocol**:
    - Understand how UMA (Universal Market Access) works and how it can be integrated in the application.
@@ -61,6 +72,16 @@ Create a `.env` file and add API keys and database credentials.
 5. **Testing**:
    - Create tests to ensure that the oracle integration works as expected.
    - Test various scenarios to validate the reliability of the oracle data.
+
+ ### UMA Protocol Integration Steps
+- **Asserting Data**: Implement a function to assert data to the UMA Optimistic Oracle. This will involve creating a smart contract that can submit assertions about events (e.g., "Team A won the match").
+  
+- **Handling Disputes**: Set up logic to handle disputes. If a dispute arises, the assertion will be sent to the DVM for resolution. Ensure that your application can respond to the outcome of these disputes.
+
+- **Economic Incentives**: Understand and implement the economic incentives for asserters and disputers. This includes bonding assertions and rewarding correct disputes.
+
+- **Testing the Integration**: Use test networks (like Görli) to test the integration of the UMA protocol. Ensure that assertions can be made, disputed, and resolved correctly.
+
 
 ## Project Structure
 ```
