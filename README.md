@@ -42,11 +42,12 @@ dotenv.config();
 Create a `.env` file and add API keys and database credentials.
 
 
-## Fetching and Mapping Events
+## Fetching and Mapping Teams and Events
 
-To fetch NFL events and map their IDs, you can run the following script:
+To fetch NFL teams and events and map their IDs, you can run the following scripts:
 
 ```sh
+ts-node scripts/fetchTeams.ts
 ts-node scripts/fetchEvents.ts
 ```
 
