@@ -5,7 +5,7 @@ import { ethers } from 'ethers';
 
 dotenv.config();
 
-export const ESPN_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/leagues/nfl/events';
+export const ESPN_API_URL = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams';
 export const ORACLE_CONTRACT_ADDRESS = process.env.ORACLE_CONTRACT_ADDRESS || '';
 export const ORACLE_CONTRACT_ABI = process.env.ORACLE_CONTRACT_ABI ? JSON.parse(process.env.ORACLE_CONTRACT_ABI) : '';
 export const PORT = process.env.PORT ? Number(process.env.PORT) : 5000;

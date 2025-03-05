@@ -4,7 +4,7 @@ import { API_KEY, ESPN_API_URL } from '../config/env';
 
 export const fetchEvents = async () => {
     try {
-        const url = `${ESPN_API_URL}/leagues/nfl/events`;
+        const url = ESPN_API_URL;
         console.log('Fetching events from:', url);
         const response = await axios.get(url, {
             headers: {
