@@ -4,7 +4,7 @@ import { API_KEY, ESPN_EVENT_API_URL } from '../config/env';
 
 export const fetchEvents = async () => {
     try {
-        const url = ESPN_EVENT_API_URL;
+        const url = ESPN_EVENT_API_URL; 
         console.log('Fetching events from:', url);
         const response = await axios.get(url, {
             headers: {
@@ -22,11 +22,21 @@ export const fetchEvents = async () => {
 
 export const mapEventIds = (events: any) => {
     const eventMapping = {};
-    events.forEach((event: any) => {
-        const eventId = event.id;
-        const eventName = event.name;
-        (eventMapping as any)[eventName] = eventId;
-    });
+    
+    if (events.items && events.items.length > 0) {
+        events.items.forEach((eventRef: any) => {
+            const eventId = eventRef.$ref.split('/').pop().split('?')[0];
+            const eventName = eventRef.name || `Event ${eventId}`;
+            if (eventId && eventName) {
+                (eventMapping as any)[eventName] = eventId;
+            } else {
+                console.warn('Event ID or Name is undefined:', eventRef);
+            }
+        });
+    } else {
+        console.warn('No events found in the response.');
+    }
+    
     return eventMapping;
 };
 
