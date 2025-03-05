@@ -1,11 +1,18 @@
 // path: src/services/eventMapping.ts
-
 import axios from 'axios';
-import { ESPN_API_URL } from '../config/env';
+import { API_KEY, ESPN_API_URL } from '../config/env';
 
 export const fetchEvents = async () => {
     try {
-        const response = await axios.get(`${ESPN_API_URL}/events`);
+        const url = `${ESPN_API_URL}/leagues/nfl/events`;
+        console.log('Fetching events from:', url);
+        const response = await axios.get(url, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${API_KEY}`
+            }
+        });
         return response.data;
     } catch (error) {
         console.error('Error fetching events:', error);
