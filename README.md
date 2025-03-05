@@ -38,6 +38,30 @@ import cors from 'cors';
 
 dotenv.config();
 
+## Configuration
+Create a `.env` file and add API keys and database credentials.
+
+## TODOs for Oracle Integration
+1. **Research UMA Protocol**:
+   - Understand how UMA (Universal Market Access) works and how it can be integrated in the application.
+   - Review UMA's documentation and examples to see how it handles oracle solutions.
+
+2. **Define Oracle Requirements**:
+   - Determine what data needs to be fetched from the oracle.
+   - Identify the specific events or conditions that will trigger oracle interactions.
+
+3. **Set Up Oracle Integration**:
+   - Decide whether the oracle integration should live in this repository or be a separate one.
+   - If separate, create a new repository for the oracle integration and set up the necessary project structure.
+
+4. **Implement Oracle Logic**:
+   - Write the logic to interact with the UMA protocol.
+   - Ensure that the application can fetch and utilize data from the oracle effectively.
+
+5. **Testing**:
+   - Create tests to ensure that the oracle integration works as expected.
+   - Test various scenarios to validate the reliability of the oracle data.
+
 ## Project Structure
 ```
 oracle-nfl-integration/
